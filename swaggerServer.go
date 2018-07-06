@@ -17,7 +17,7 @@ func main() {
 
 	flag.Parse()
 
-	fmt.Printf("Server will listen at %s:%d\n", serverHost, serverPort)
+	fmt.Printf("Server will listen at %s:%d and host files from folder %s\n", serverHost, serverPort, staticDirectory)
 
 	mux := http.NewServeMux()
 	mux.Handle("/", http.FileServer(http.Dir(staticDirectory)))
