@@ -4,6 +4,6 @@ RUN CGO_ENABLED=0 go get -a -ldflags '-s' \
 
 FROM scratch
 COPY --from=compiler /go/bin/swagger-ui-static .
-ADD /static ./static
+COPY /static ./static
 EXPOSE 3000
 CMD ["./swagger-ui-static"]
